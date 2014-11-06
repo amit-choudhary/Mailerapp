@@ -1,3 +1,4 @@
+# FIXME_AK: No validations of any sort?
 class Email < ActiveRecord::Base
 
   belongs_to :mailbox

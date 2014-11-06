@@ -7,6 +7,10 @@ class Attachment < ActiveRecord::Base
   scope :zips, -> { where(type: 'Zip')}
   scope :texts, -> { where(type: 'Text')}
 
+  # FIXME_AK: Shouldn't this be done from the email side.
+  # When we are saving the email, shouldn't the logic 
+  # should mark it as spam, when there are any text attachment
+
   before_save :set_email_as_spam, if: -> { type == 'Text' }
 
   private

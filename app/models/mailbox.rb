@@ -1,4 +1,5 @@
 class Mailbox < ActiveRecord::Base
+  # FIXME_AK: No dependent option?
   has_many :receivers
   has_many :sent_emails, class_name: Email
   has_many :contacts
